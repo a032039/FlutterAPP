@@ -37,6 +37,7 @@ android {
         targetSdkVersion 23
         versionCode 196
         versionName "16.83"
+        multiDexEnabled true
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.

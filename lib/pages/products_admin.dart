@@ -4,6 +4,7 @@ import './product_edit.dart';
 import './product_list.dart';
 import '../widgets/ui_elements/logout_list_tile.dart';
 import '../scoped-models/main.dart';
+import '../screens/home.dart';
 
 class ProductsAdminPage extends StatelessWidget {
   final MainModel model;
@@ -16,11 +17,11 @@ class ProductsAdminPage extends StatelessWidget {
         children: <Widget>[
           AppBar(
             automaticallyImplyLeading: false,
-            title: Text('Choose'),
+            title: Text('Escolha'),
           ),
           ListTile(
             leading: Icon(Icons.shop),
-            title: Text('All Products'),
+            title: Text('Todos Produtos'),
             onTap: () {
               Navigator.pushReplacementNamed(context, '/');
             },
@@ -35,26 +36,30 @@ class ProductsAdminPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Scaffold(
         drawer: _buildSideDrawer(context),
         appBar: AppBar(
-          title: Text('Manage Products'),
+          title: Text('Produtos'),
           bottom: TabBar(
             tabs: <Widget>[
               Tab(
                 icon: Icon(Icons.create),
-                text: 'Create Product',
+                text: 'Criar Produto',
               ),
               Tab(
                 icon: Icon(Icons.list),
-                text: 'My Products',
+                text: 'Os meus produtos',
+              ),
+               Tab(
+                icon: Icon(Icons.map),
+                text: 'mapa',
               ),
             ],
           ),
         ),
         body: TabBarView(
-          children: <Widget>[ProductEditPage(), ProductListPage(model)],
+          children: <Widget>[ProductEditPage(), ProductListPage(model), MyHomePage()],
         ),
       ),
     );

@@ -24,7 +24,7 @@ class ProductPage extends StatelessWidget {
         MapOptions(
             initialCameraPosition: cameraPosition,
             mapViewType: MapViewType.normal,
-            title: 'Product Location'),
+            title: 'Localização Produto'),
         toolbarActions: [
           ToolbarAction('Close', 1),
         ]);
@@ -68,7 +68,7 @@ class ProductPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {
-        print('Back button pressed!');
+        print('Botão pressionado!');
         Navigator.pop(context, false);
         return Future.value(false);
       },

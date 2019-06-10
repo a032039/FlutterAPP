@@ -64,7 +64,7 @@ mixin ProductsModel on ConnectedProductsModel {
       'title': title,
       'description': description,
       'image':
-          'https://upload.wikimedia.org/wikipedia/commons/6/68/Chocolatebrownie.JPG',
+          'https://www.porto4ageing.up.pt/ficheiros/membros/originais/-instituto-universitario-da-maia--1460056709.jpg',
       'price': price,
       'userEmail': _authenticatedUser.email,
       'userId': _authenticatedUser.id,
@@ -116,7 +116,7 @@ mixin ProductsModel on ConnectedProductsModel {
       'title': title,
       'description': description,
       'image':
-          'https://upload.wikimedia.org/wikipedia/commons/6/68/Chocolatebrownie.JPG',
+          'https://www.porto4ageing.up.pt/ficheiros/membros/originais/-instituto-universitario-da-maia--1460056709.jpg',
       'price': price,
       'loc_lat': locData.latitude,
       'loc_lng': locData.longitude,

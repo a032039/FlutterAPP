@@ -45,17 +45,17 @@ class _ProductEditPageState extends State<ProductEditPage> {
       focusNode: _titleFocusNode,
       child: TextFormField(
         focusNode: _titleFocusNode,
-        decoration: InputDecoration(labelText: 'Product Title'),
+        decoration: InputDecoration(labelText: 'Titulo do Produto'),
         controller: _titleTextController,
         // initialValue: product == null ? '' : product.title,
         validator: (String value) {
           // if (value.trim().length <= 0) {
           if (value.isEmpty || value.length < 5) {
-            return 'Title is required and should be 5+ characters long.';
+            return 'Titlo é obrigatório e tem de ter mais de 5 caracteres.';
           }
         },
         onSaved: (String value) {
-          _formData['title'] = value;
+          _formData['Titulo'] = value;
         },
       ),
     );
@@ -67,12 +67,12 @@ class _ProductEditPageState extends State<ProductEditPage> {
       child: TextFormField(
         focusNode: _descriptionFocusNode,
         maxLines: 4,
-        decoration: InputDecoration(labelText: 'Product Description'),
+        decoration: InputDecoration(labelText: 'Descrição Produto'),
         initialValue: product == null ? '' : product.description,
         validator: (String value) {
           // if (value.trim().length <= 0) {
           if (value.isEmpty || value.length < 10) {
-            return 'Description is required and should be 10+ characters long.';
+            return 'Descrição é obrigatória e tem de ter mais de 10 caracteres.';
           }
         },
         onSaved: (String value) {
@@ -88,13 +88,13 @@ class _ProductEditPageState extends State<ProductEditPage> {
       child: TextFormField(
         focusNode: _priceFocusNode,
         keyboardType: TextInputType.number,
-        decoration: InputDecoration(labelText: 'Product Price'),
+        decoration: InputDecoration(labelText: 'Preço Produto'),
         initialValue: product == null ? '' : product.price.toString(),
         validator: (String value) {
           // if (value.trim().length <= 0) {
           if (value.isEmpty ||
               !RegExp(r'^(?:[1-9]\d*|0)?(?:\.\d+)?$').hasMatch(value)) {
-            return 'Price is required and should be a number.';
+            return 'Preço é obrigatório e tem de ser um numero.';
           }
         },
         onSaved: (String value) {
@@ -190,8 +190,8 @@ class _ProductEditPageState extends State<ProductEditPage> {
               context: context,
               builder: (BuildContext context) {
                 return AlertDialog(
-                  title: Text('Something went wrong'),
-                  content: Text('Please try again!'),
+                  title: Text('Alguma coisa correu mal'),
+                  content: Text('P.f tente outra vez!'),
                   actions: <Widget>[
                     FlatButton(
                       onPressed: () => Navigator.of(context).pop(),
@@ -225,7 +225,7 @@ class _ProductEditPageState extends State<ProductEditPage> {
             ? pageContent
             : Scaffold(
                 appBar: AppBar(
-                  title: Text('Edit Product'),
+                  title: Text('Editar produto'),
                 ),
                 body: pageContent,
               );

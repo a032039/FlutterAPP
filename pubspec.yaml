@@ -1,4 +1,4 @@
-name: flutter_course
+name: finalproject_ismai
 description: A new Flutter project.
 
 dependencies:
@@ -9,13 +9,18 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.0
   scoped_model: "^0.3.0"
-  http: "^0.11.3+16"
+  http: ^0.12.0+2
   shared_preferences: "^0.4.2"
   rxdart: "^0.21.0"
   map_view:
     git:
       url: https://github.com/Eimji/flutter_google_map_view.git
   location: ^2.1.0
+  google_maps_flutter: ^0.5.16
+  cloud_firestore: ^0.12.3
+  geolocator: ^5.0.0
+  google_maps_webservice: ^0.0.14
+
 
 dev_dependencies:
   flutter_test:

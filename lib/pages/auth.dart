@@ -25,8 +25,8 @@ class _AuthPageState extends State<AuthPage> {
   DecorationImage _buildBackgroundImage() {
     return DecorationImage(
       fit: BoxFit.cover,
-      colorFilter:
-          ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.dstATop),
+      // colorFilter:
+      //     ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.dstATop),
       image: AssetImage('assets/background.jpg'),
     );
   }
@@ -40,7 +40,7 @@ class _AuthPageState extends State<AuthPage> {
         if (value.isEmpty ||
             !RegExp(r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
                 .hasMatch(value)) {
-          return 'Please enter a valid email';
+          return 'Coloque um email valido';
         }
       },
       onSaved: (String value) {
@@ -57,7 +57,7 @@ class _AuthPageState extends State<AuthPage> {
       controller: _passwordTextController,
       validator: (String value) {
         if (value.isEmpty || value.length < 6) {
-          return 'Password invalid';
+          return 'Password invalida';
         }
       },
       onSaved: (String value) {
@@ -69,11 +69,11 @@ class _AuthPageState extends State<AuthPage> {
   Widget _buildPasswordConfirmTextField() {
     return TextFormField(
       decoration: InputDecoration(
-          labelText: 'Confirm Password', filled: true, fillColor: Colors.white),
+          labelText: 'Confirme Password', filled: true, fillColor: Colors.white),
       obscureText: true,
       validator: (String value) {
         if (_passwordTextController.text != value) {
-          return 'Passwords do not match.';
+          return 'Passwords não coincidem.';
         }
       },
     );
@@ -87,7 +87,7 @@ class _AuthPageState extends State<AuthPage> {
           _formData['acceptTerms'] = value;
         });
       },
-      title: Text('Accept Terms'),
+      title: Text('Aceitar termos'),
     );
   }
 
@@ -106,7 +106,7 @@ class _AuthPageState extends State<AuthPage> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text('An Error Occurred!'),
+            title: Text('Ups , erro!'),
             content: Text(successInformation['message']),
             actions: <Widget>[
               FlatButton(

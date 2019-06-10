@@ -30,11 +30,11 @@ class _ProductsPageState extends State<ProductsPage> {
         children: <Widget>[
           AppBar(
             automaticallyImplyLeading: false,
-            title: Text('Choose'),
+            title: Text('Escolha'),
           ),
           ListTile(
             leading: Icon(Icons.edit),
-            title: Text('Manage Products'),
+            title: Text('Controlo Produtos'),
             onTap: () {
               Navigator.pushReplacementNamed(context, '/admin');
             },
@@ -49,7 +49,7 @@ class _ProductsPageState extends State<ProductsPage> {
   Widget _buildProductsList() {
     return ScopedModelDescendant(
       builder: (BuildContext context, Widget child, MainModel model) {
-        Widget content = Center(child: Text('No Products Found!'));
+        Widget content = Center(child: Text('Não foram encontrados produtos!'));
         if (model.displayedProducts.length > 0 && !model.isLoading) {
           content = Products();
         } else if (model.isLoading) {
@@ -65,7 +65,7 @@ class _ProductsPageState extends State<ProductsPage> {
     return Scaffold(
       drawer: _buildSideDrawer(context),
       appBar: AppBar(
-        title: Text('EasyList'),
+        title: Text('Lista'),
         actions: <Widget>[
           ScopedModelDescendant<MainModel>(
             builder: (BuildContext context, Widget child, MainModel model) {
